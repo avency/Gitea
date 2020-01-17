@@ -1,0 +1,21 @@
+{
+    "name": "avency/gitea",
+    "description": "Gitea API",
+    "type": "library",
+    "homepage": "https://www.avency.de",
+    "license": ["MIT"],
+    "require": {
+        "php": "^7.2",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Avency\\Gitea\\": "Classes"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Avency.Gitea"
+        }
+    }
+}
