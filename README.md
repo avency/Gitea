@@ -56,11 +56,6 @@ $giteaClient = new Avency\Gitea\Client(
 $repository = $giteaClient->api('repositories')->get('owner', 'repoName');
 ```
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://github.com/avency/gitea//blob/master/CONTRIBUTING.md)
-for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available,
