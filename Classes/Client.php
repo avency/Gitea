@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Avency\Gitea;
 
 use Avency\Gitea\Endpoint\EndpointInterface;
+use Avency\Gitea\Endpoint\Miscellaneous;
 use Avency\Gitea\Endpoint\Repositories;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
@@ -13,6 +14,7 @@ use Psr\Http\Message\ResponseInterface;
  * Gitea Client
  *
  * @method Repositories repositories()
+ * @method Miscellaneous miscellaneous()
  */
 class Client
 {
