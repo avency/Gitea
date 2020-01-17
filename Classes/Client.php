@@ -11,6 +11,8 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Gitea Client
+ *
+ * @method Repositories repositories()
  */
 class Client
 {
@@ -45,18 +47,20 @@ class Client
     }
 
     /**
-     * @param string $api
+     * @param $method
+     * @param $args
      * @return EndpointInterface
      * @throws Exception
      */
-    public function api(string $api): EndpointInterface
+    public function __call($method, $args)
     {
-        switch ($api) {
-            case 'repositories':
-                return new Repositories($this);
+        $interfaceName = EndpointInterface::class;
+        $endpointClassName = str_replace('\\EndpointInterface', '\\' . ucfirst($method), $interfaceName);
+        if (class_exists($endpointClassName)) {
+            return new $endpointClassName($this);
         }
 
-        throw new Exception('Endpoint not found', 1579246217);
+        throw new Exception('Endpoint "' . ucfirst($method) . '" not found!', 1579274712);
     }
 
     /**
