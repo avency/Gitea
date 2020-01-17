@@ -53,7 +53,10 @@ $giteaClient = new Avency\Gitea\Client(
 // - - - - -
 
 // Get a single repository
-$repository = $giteaClient->api('repositories')->get('owner', 'repoName');
+$repository = $giteaClient->repositories()->get('owner', 'repoName');
+
+// Get version
+$repository = $giteaClient->miscellaneous()->version();
 ```
 
 ## Versioning
@@ -95,7 +98,7 @@ Status | Method | Endpoint
 ❌ | POST | /markdown
 ❌ | POST | /markdown/raw
 ❌ | GET | /signing-key.gpg
-❌ | GET | /version
+✅ | GET | /version
 
 #### Organization
 
