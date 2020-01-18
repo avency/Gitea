@@ -135,6 +135,7 @@ class Repositories extends AbstractEndpoint implements EndpointInterface
             'order' => $order,
         ];
         $options['query'] = $this->removeNullValues($options['query']);
+
         $response = $this->client->request(self::BASE_URI . '/search', 'GET', $options);
         return \GuzzleHttp\json_decode($response->getBody(), true);
     }
@@ -155,7 +156,7 @@ class Repositories extends AbstractEndpoint implements EndpointInterface
      * @param string $repositoryName
      * @return bool
      */
-    public function delete(string $owner, string $repositoryName): array
+    public function delete(string $owner, string $repositoryName): bool
     {
         $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName, 'DELETE');
         return true;
@@ -164,11 +165,88 @@ class Repositories extends AbstractEndpoint implements EndpointInterface
     /**
      * @param string $owner
      * @param string $repositoryName
+     * @param bool|null $allow_merge_commits
+     * @param bool|null $allow_rebase
+     * @param bool|null $allow_rebase_explicit
+     * @param bool|null $allow_squash_merge
+     * @param bool|null $archived
+     * @param string|null $default_branch
+     * @param string|null $description
+     * @param string|null $external_tracker_format
+     * @param string|null $external_tracker_style
+     * @param string|null $external_tracker_url
+     * @param string|null $external_wiki_url
+     * @param bool|null $has_issues
+     * @param bool|null $has_pull_requests
+     * @param bool|null $has_wiki
+     * @param bool|null $ignore_whitespace_conflicts
+     * @param bool|null $allow_only_contributors_to_track_time
+     * @param bool|null $enable_issue_dependencies
+     * @param bool|null $enable_time_tracker
+     * @param string|null $name
+     * @param bool|null $private
+     * @param bool|null $template
+     * @param string|null $website
      * @return array
      */
-    public function patch(string $owner, string $repositoryName, array $properties): array
+    public function update(
+        string $owner,
+        string $repositoryName,
+        bool $allow_merge_commits = null,
+        bool $allow_rebase = null,
+        bool $allow_rebase_explicit = null,
+        bool $allow_squash_merge = null,
+        bool $archived = null,
+        string $default_branch = null,
+        string $description = null,
+        string $external_tracker_format = null,
+        string $external_tracker_style = null,
+        string $external_tracker_url = null,
+        string $external_wiki_url = null,
+        bool $has_issues = null,
+        bool $has_pull_requests = null,
+        bool $has_wiki = null,
+        bool $ignore_whitespace_conflicts = null,
+        bool $allow_only_contributors_to_track_time = null,
+        bool $enable_issue_dependencies = null,
+        bool $enable_time_tracker = null,
+        string $name = null,
+        bool $private = null,
+        bool $template = null,
+        string $website = null
+    ): array
     {
-        $options['json'] = $properties;
+        $options['json'] = [
+            'allow_merge_commits' => $allow_merge_commits,
+            'allow_rebase' => $allow_rebase,
+            'allow_rebase_explicit' => $allow_rebase_explicit,
+            'allow_squash_merge' => $allow_squash_merge,
+            'archived' => $archived,
+            'default_branch' => $default_branch,
+            'description' => $description,
+            'external_tracker' => [
+                'external_tracker_format' => $external_tracker_format,
+                'external_tracker_style' => $external_tracker_style,
+                'external_tracker_url' => $external_tracker_url,
+            ],
+            'external_wiki' => [
+                'external_wiki_url' => $external_wiki_url,
+            ],
+            'has_issues' => $has_issues,
+            'has_pull_requests' => $has_pull_requests,
+            'has_wiki' => $has_wiki,
+            'ignore_whitespace_conflicts' => $ignore_whitespace_conflicts,
+            'internal_tracker' => [
+                'allow_only_contributors_to_track_time' => $allow_only_contributors_to_track_time,
+                'enable_issue_dependencies' => $enable_issue_dependencies,
+                'enable_time_tracker' => $enable_time_tracker,
+            ],
+            'name' => $name,
+            'private' => $private,
+            'template' => $template,
+            'website' => $website,
+        ];
+        $options['json'] = $this->removeNullValues($options['json']);
 
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName, 'PATCH', $options);
         return \GuzzleHttp\json_decode($response->getBody(), true);
