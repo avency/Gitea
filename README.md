@@ -82,14 +82,14 @@ This project is licensed under the MIT License - see the
 
 Status | Method | Endpoint
 --- | --- | ---
-❌ | GET | /admin/orgs
-❌ | POST | /admin/users
-❌ | DELETE | /admin/users/{username}
-❌ | PATCH | /admin/users/{username}
-❌ | POST | /admin/users/{username}/keys
-❌ | DELETE | /admin/users/{username}/keys/{id}
-❌ | POST | /admin/users/{username}/orgs
-❌ | POST | /admin/users/{username}/repos
+✅ | GET | /admin/orgs
+✅ | POST | /admin/users
+✅ | DELETE | /admin/users/{username}
+✅ | PATCH | /admin/users/{username}
+✅ | POST | /admin/users/{username}/keys
+✅ | DELETE | /admin/users/{username}/keys/{id}
+✅ | POST | /admin/users/{username}/orgs
+✅ | POST | /admin/users/{username}/repos
 
 #### Miscellaneous
 
