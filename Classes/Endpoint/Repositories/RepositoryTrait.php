@@ -248,4 +248,116 @@ trait RepositoryTrait
 
         return true;
     }
+
+    /**
+     * @param string $owner
+     * @param string $repositoryName
+     * @return string
+     */
+    public function getSigningKeyGPG(string $owner, string $repositoryName): string
+    {
+        $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/signing-key.gpg');
+
+        return (string)$response->getBody();
+    }
+
+    /**
+     * @param string $owner
+     * @param string $repositoryName
+     * @return array
+     */
+    public function getStargazers(string $owner, string $repositoryName): array
+    {
+        $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/stargazers');
+
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param string $owner
+     * @param string $repositoryName
+     * @return array
+     */
+    public function getTags(string $owner, string $repositoryName): array
+    {
+        $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/tags');
+
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param string $owner
+     * @param string $repositoryName
+     * @return array
+     */
+    public function getTimes(string $owner, string $repositoryName): array
+    {
+        $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/times');
+
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function getById(int $id): array
+    {
+        $response = $this->client->request('/repositories/' . $id);
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param string $searchTerm
+     * @return array
+     */
+    public function topicsSearch(string $searchTerm): array
+    {
+        $options['query'] = [
+            'q' => $searchTerm
+        ];
+
+        $response = $this->client->request('/topics/search', 'GET', $options);
+
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
+
+    /**
+     * @param string $name
+     * @param bool $autoInit
+     * @param string $description
+     * @param string $gitignores
+     * @param string $issueLabels
+     * @param string $license
+     * @param bool $private
+     * @param string $readme
+     * @return array
+     */
+    public function create(
+        string $name,
+        bool $autoInit = null,
+        string $description = null,
+        string $gitignores = null,
+        string $issueLabels = null,
+        string $license = null,
+        bool $private = null,
+        string $readme = null
+    ): array
+    {
+        $options['json'] = [
+            'name' => $name,
+            'auto_init' => $autoInit,
+            'description' => $description,
+            'gitignores' => $gitignores,
+            'issue_labels' => $issueLabels,
+            'license' => $license,
+            'private' => $private,
+            'readme' => $readme,
+        ];
+        $options['json'] = $this->removeNullValues($options['json']);
+
+        $response = $this->client->request('/user/repos', 'POST', $options);
+
+        return \GuzzleHttp\json_decode($response->getBody(), true);
+    }
 }

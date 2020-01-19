@@ -11,7 +11,7 @@ use Avency\Gitea\Client;
  */
 class Admin extends AbstractEndpoint implements EndpointInterface
 {
-    const BASE_URI = 'api/v1/admin';
+    const BASE_URI = '/admin';
 
     /**
      * @var Client

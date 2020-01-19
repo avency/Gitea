@@ -24,6 +24,8 @@ class Client
     const AUTH_TOKEN = 'token';
     const AUTH_BASIC_AUTH = 'basic_auth';
 
+    const BASE_URI = '/api/v1';
+
     /**
      * @var \GuzzleHttp\Client
      */
@@ -75,9 +77,14 @@ class Client
      */
     public function request(string $uri = '', string $method = 'GET', array $options = []): ResponseInterface
     {
+        $uri = self::BASE_URI . $uri;
+
         if (!empty($this->config['query']) && isset($options['query'])) {
             $options['query'] = array_merge($this->config['query'], $options['query']);
+        } else if (!empty($this->config['query'])) {
+            $options['query'] = $this->config['query'];
         }
+
         return $this->httpClient->request($method, $uri, $options);
     }
 

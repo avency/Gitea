@@ -14,7 +14,11 @@ use Avency\Gitea\Endpoint\Repositories\GitTrait;
 use Avency\Gitea\Endpoint\Repositories\HooksTrait;
 use Avency\Gitea\Endpoint\Repositories\KeysTrait;
 use Avency\Gitea\Endpoint\Repositories\PullsTrait;
+use Avency\Gitea\Endpoint\Repositories\ReleasesTrait;
 use Avency\Gitea\Endpoint\Repositories\RepositoryTrait;
+use Avency\Gitea\Endpoint\Repositories\StatusesTrait;
+use Avency\Gitea\Endpoint\Repositories\SubscriptionTrait;
+use Avency\Gitea\Endpoint\Repositories\TopicsTrait;
 
 /**
  * Repositories endpoint
@@ -30,9 +34,13 @@ class Repositories extends AbstractEndpoint implements EndpointInterface
     use HooksTrait;
     use KeysTrait;
     use PullsTrait;
+    use ReleasesTrait;
     use RepositoryTrait;
+    use StatusesTrait;
+    use SubscriptionTrait;
+    use TopicsTrait;
 
-    const BASE_URI = 'api/v1/repos';
+    const BASE_URI = '/repos';
 
     /**
      * @var Client

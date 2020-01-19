@@ -11,7 +11,7 @@ use Avency\Gitea\Client;
  */
 class Miscellaneous extends AbstractEndpoint implements EndpointInterface
 {
-    const BASE_URI = 'api/v1';
+    const BASE_URI = '';
 
     /**
      * @var Client
