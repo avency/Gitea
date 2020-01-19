@@ -75,7 +75,7 @@ class Client
      */
     public function request(string $uri = '', string $method = 'GET', array $options = []): ResponseInterface
     {
-        if (!empty($this->config['query']) && !empty($options['query'])) {
+        if (!empty($this->config['query']) && isset($options['query'])) {
             $options['query'] = array_merge($this->config['query'], $options['query']);
         }
         return $this->httpClient->request($method, $uri, $options);
