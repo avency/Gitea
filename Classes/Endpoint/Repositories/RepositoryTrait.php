@@ -236,4 +236,16 @@ trait RepositoryTrait
         $response = $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName, 'PATCH', $options);
         return \GuzzleHttp\json_decode($response->getBody(), true);
     }
+
+    /**
+     * @param string $owner
+     * @param string $repositoryName
+     * @return bool
+     */
+    public function mirrorSync(string $owner, string $repositoryName): bool
+    {
+        $this->client->request(self::BASE_URI . '/' . $owner . '/' . $repositoryName . '/mirror-sync', 'POST');
+
+        return true;
+    }
 }
