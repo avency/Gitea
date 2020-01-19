@@ -59,6 +59,13 @@ $repository = $giteaClient->repositories()->get('owner', 'repoName');
 $repository = $giteaClient->miscellaneous()->version();
 ```
 
+Run an API call as another user:
+
+```
+// e.g. check subscription status as a user
+$status = $giteaClient->sudo('username')->repositories()->checkSubscription();
+``` 
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available,

@@ -89,6 +89,16 @@ class Client
     }
 
     /**
+     * @param string $username
+     * @return $this
+     */
+    public function sudo(string $username): self
+    {
+        $this->config['query']['sudo'] = $username;
+        return $this;
+    }
+
+    /**
      * @param array $authentication
      * @throws Exception
      */
