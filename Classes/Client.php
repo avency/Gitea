@@ -7,6 +7,7 @@ namespace Avency\Gitea;
 use Avency\Gitea\Endpoint\Admin;
 use Avency\Gitea\Endpoint\EndpointInterface;
 use Avency\Gitea\Endpoint\Miscellaneous;
+use Avency\Gitea\Endpoint\Organizations;
 use Avency\Gitea\Endpoint\Repositories;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
@@ -16,6 +17,7 @@ use Psr\Http\Message\ResponseInterface;
  *
  * @method Admin admin()
  * @method Miscellaneous miscellaneous()
+ * @method Organizations organizations()
  * @method Repositories repositories()
  */
 class Client

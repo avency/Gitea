@@ -111,39 +111,39 @@ Status | Method | Endpoint | Comment
 
 Status | Method | Endpoint | Comment
 --- | --- | --- | ---
-❌ | POST | /org/{org}/repos | 
-❌ | POST | /orgs | 
-❌ | GET | /orgs/{org} | 
-❌ | DELETE | /orgs/{org} | 
-❌ | PATCH | /orgs/{org} | 
-❌ | GET | /orgs/{org}/hooks | 
-❌ | POST | /orgs/{org}/hooks/ | 
-❌ | GET | /orgs/{org}/hooks/{id} | 
-❌ | DELETE | /orgs/{org}/hooks/{id} | 
-❌ | PATCH | /orgs/{org}/hooks/{id} | 
-❌ | GET | /orgs/{org}/members | 
-❌ | GET | /orgs/{org}/members/{username} | 
-❌ | DELETE | /orgs/{org}/members/{username} | 
-❌ | GET | /orgs/{org}/public_members | 
-❌ | GET | /orgs/{org}/public_members/{username} | 
-❌ | PUT | /orgs/{org}/public_members/{username} | 
-❌ | DELETE | /orgs/{org}/public_members/{username} | 
-❌ | GET | /orgs/{org}/repos | 
-❌ | GET | /orgs/{org}/teams | 
-❌ | POST | /orgs/{org}/teams | 
-❌ | GET | /orgs/{org}/teams/search | 
-❌ | GET | /teams/{id} | 
-❌ | DELETE | /teams/{id} | 
-❌ | PATCH | /teams/{id} | 
-❌ | GET | /teams/{id}/members | 
-❌ | GET | /teams/{id}/members/{username} | 
-❌ | PUT | /teams/{id}/members/{username} | 
-❌ | DELETE | /teams/{id}/members/{username} | 
-❌ | GET | /teams/{id}/repos | 
-❌ | PUT | /teams/{id}/repos/{org}/{repo} | 
-❌ | DELETE | /teams/{id}/repos/{org}/{repo} | 
-❌ | GET | /user/orgs | 
-❌ | GET | /users/{username}/orgs | 
+✅ | POST | /org/{org}/repos | 
+✅ | POST | /orgs | 
+✅ | GET | /orgs/{org} | 
+✅ | DELETE | /orgs/{org} | 
+✅ | PATCH | /orgs/{org} | 
+✅ | GET | /orgs/{org}/hooks | 
+✅ | POST | /orgs/{org}/hooks/ | 
+✅ | GET | /orgs/{org}/hooks/{id} | 
+✅ | DELETE | /orgs/{org}/hooks/{id} | 
+✅ | PATCH | /orgs/{org}/hooks/{id} | 
+✅ | GET | /orgs/{org}/members | 
+✅ | GET | /orgs/{org}/members/{username} | 
+✅ | DELETE | /orgs/{org}/members/{username} | 
+✅ | GET | /orgs/{org}/public_members | 
+✅ | GET | /orgs/{org}/public_members/{username} | 
+✅ | PUT | /orgs/{org}/public_members/{username} | 
+✅ | DELETE | /orgs/{org}/public_members/{username} | 
+✅ | GET | /orgs/{org}/repos | 
+✅ | GET | /orgs/{org}/teams | 
+✅ | POST | /orgs/{org}/teams | 
+✅ | GET | /orgs/{org}/teams/search | 
+✅ | GET | /teams/{id} | 
+✅ | DELETE | /teams/{id} | 
+✅ | PATCH | /teams/{id} | 
+✅ | GET | /teams/{id}/members | 
+✅ | GET | /teams/{id}/members/{username} | 
+✅ | PUT | /teams/{id}/members/{username} | 
+✅ | DELETE | /teams/{id}/members/{username} | 
+✅ | GET | /teams/{id}/repos | 
+✅ | PUT | /teams/{id}/repos/{org}/{repo} | 
+✅ | DELETE | /teams/{id}/repos/{org}/{repo} | 
+✅ | GET | /user/orgs | 
+✅ | GET | /users/{username}/orgs | 
 
 #### Issue
 
