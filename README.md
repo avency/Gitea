@@ -278,34 +278,39 @@ Status | Method | Endpoint | Comment
 
 Status | Method | Endpoint | Comment
 --- | --- | --- | ---
+✅ | GET | /user | 
+✅ | GET | /user/emails | 
+✅ | POST | /user/emails | 
+✅ | DELETE | /user/emails | 
+✅ | GET | /user/followers | 
+✅ | GET | /user/following | 
+✅ | GET | /user/following/{username} | 
+✅ | PUT | /user/following/{username} | 
+✅ | DELETE | /user/following/{username} | 
+✅ | GET | /user/gpg_keys | 
+✅ | POST | /user/gpg_keys | 
+✅ | GET | /user/gpg_keys/{id} | 
+✅ | DELETE | /user/gpg_keys/{id} | 
+✅ | GET | /user/keys | 
+✅ | POST | /user/keys | 
+✅ | GET | /user/keys/{id} | 
+✅ | DELETE | /user/keys/{id} | 
+✅ | GET | /user/repos | 
+✅ | POST | /user/repos | 
+✅ | GET | /user/starred | 
+✅ | GET | /user/starred/{owner}/{repo} | 
+✅ | PUT | /user/starred/{owner}/{repo} | 
+✅ | DELETE | /user/starred/{owner}/{repo} | 
+✅ | GET | /user/stopwatches | 
+✅ | GET | /user/subscriptions | 
+✅ | GET | /user/teams | 
+✅ | GET | /user/times |
+
+#### Users
+
+Status | Method | Endpoint | Comment
+--- | --- | --- | --- 
 ❌ | GET | /repos/{owner}/{repo}/times/{user} | 
-❌ | GET | /user | 
-❌ | GET | /user/emails | 
-❌ | POST | /user/emails | 
-❌ | DELETE | /user/emails | 
-❌ | GET | /user/followers | 
-❌ | GET | /user/following | 
-❌ | GET | /user/following/{username} | 
-❌ | PUT | /user/following/{username} | 
-❌ | DELETE | /user/following/{username} | 
-❌ | GET | /user/gpg_keys | 
-❌ | POST | /user/gpg_keys | 
-❌ | GET | /user/gpg_keys/{id} | 
-❌ | DELETE | /user/gpg_keys/{id} | 
-❌ | GET | /user/keys | 
-❌ | POST | /user/keys | 
-❌ | GET | /user/keys/{id} | 
-❌ | DELETE | /user/keys/{id} | 
-❌ | GET | /user/repos | 
-❌ | POST | /user/repos | 
-❌ | GET | /user/starred | 
-❌ | GET | /user/starred/{owner}/{repo} | 
-❌ | PUT | /user/starred/{owner}/{repo} | 
-❌ | DELETE | /user/starred/{owner}/{repo} | 
-❌ | GET | /user/stopwatches | 
-❌ | GET | /user/subscriptions | 
-❌ | GET | /user/teams | 
-❌ | GET | /user/times | 
 ❌ | GET | /users/search | 
 ❌ | GET | /users/{follower}/following/{followee} | 
 ❌ | GET | /users/{username} | 
