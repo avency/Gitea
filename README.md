@@ -149,48 +149,50 @@ Status | Method | Endpoint | Comment
 
 Status | Method | Endpoint | Comment
 --- | --- | --- | ---
-❌ | GET | /repos/issues/search | 
-❌ | GET | /repos/{owner}/{repo}/issues | 
-❌ | POST | /repos/{owner}/{repo}/issues | 
-❌ | GET | /repos/{owner}/{repo}/issues/comments | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/comments/{id} | 
-❌ | PATCH | /repos/{owner}/{repo}/issues/comments/{id} | 
-❌ | GET | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
-❌ | POST | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index} | 
-❌ | PATCH | /repos/{owner}/{repo}/issues/{index} | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index}/comments | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/comments | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/deadline | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index}/labels | 
-❌ | PUT | /repos/{owner}/{repo}/issues/{index}/labels | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/labels | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/labels | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/labels/{id} | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index}/reactions | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/reactions | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/reactions | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/stopwatch/delete | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/stopwatch/start | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/stopwatch/stop | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index}/subscriptions | 
-❌ | PUT | /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | 
-❌ | GET | /repos/{owner}/{repo}/issues/{index}/times | 
-❌ | POST | /repos/{owner}/{repo}/issues/{index}/times | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/times | 
-❌ | DELETE | /repos/{owner}/{repo}/issues/{index}/times/{id} | 
-❌ | GET | /repos/{owner}/{repo}/labels | 
-❌ | POST | /repos/{owner}/{repo}/labels | 
-❌ | GET | /repos/{owner}/{repo}/labels/{id} | 
-❌ | DELETE | /repos/{owner}/{repo}/labels/{id} | 
-❌ | PATCH | /repos/{owner}/{repo}/labels/{id} | 
-❌ | GET | /repos/{owner}/{repo}/milestones | 
-❌ | POST | /repos/{owner}/{repo}/milestones | 
-❌ | GET | /repos/{owner}/{repo}/milestones/{id} | 
-❌ | DELETE | /repos/{owner}/{repo}/milestones/{id} | 
-❌ | PATCH | /repos/{owner}/{repo}/milestones/{id} | 
+✅ | GET | /repos/issues/search | 
+✅ | GET | /repos/{owner}/{repo}/issues | 
+✅ | POST | /repos/{owner}/{repo}/issues | 
+✅ | GET | /repos/{owner}/{repo}/issues/comments | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/comments/{id} | 
+✅ | PATCH | /repos/{owner}/{repo}/issues/comments/{id} | 
+✅ | GET | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
+✅ | POST | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/comments/{id}/reactions | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index} | 
+✅ | PATCH | /repos/{owner}/{repo}/issues/{index} | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index}/comments | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/comments | 
+⛔️ | DELETE​ | /repos​/{owner}​/{repo}​/issues​/{index}​/comments​/{id} | Not supported / Deprecated
+⛔️ | PATCH​ | /repos​/{owner}​/{repo}​/issues​/{index}​/comments​/{id} | Not supported / Deprecated
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/deadline | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index}/labels | 
+✅ | PUT | /repos/{owner}/{repo}/issues/{index}/labels | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/labels | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/labels | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/labels/{id} | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index}/reactions | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/reactions | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/reactions |
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/stopwatch/delete | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/stopwatch/start | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/stopwatch/stop | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index}/subscriptions | 
+✅ | PUT | /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/subscriptions/{user} | 
+✅ | GET | /repos/{owner}/{repo}/issues/{index}/times | 
+✅ | POST | /repos/{owner}/{repo}/issues/{index}/times | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/times | 
+✅ | DELETE | /repos/{owner}/{repo}/issues/{index}/times/{id} | 
+✅ | GET | /repos/{owner}/{repo}/labels | 
+✅ | POST | /repos/{owner}/{repo}/labels | 
+✅ | GET | /repos/{owner}/{repo}/labels/{id} | 
+✅ | DELETE | /repos/{owner}/{repo}/labels/{id} | 
+✅ | PATCH | /repos/{owner}/{repo}/labels/{id} | 
+✅ | GET | /repos/{owner}/{repo}/milestones | 
+✅ | POST | /repos/{owner}/{repo}/milestones | 
+✅ | GET | /repos/{owner}/{repo}/milestones/{id} | 
+✅ | DELETE | /repos/{owner}/{repo}/milestones/{id} | 
+✅ | PATCH | /repos/{owner}/{repo}/milestones/{id} | 
 
 #### Repository
 
