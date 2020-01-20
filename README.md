@@ -2,8 +2,6 @@
 
 This package provides an API client for [Gitea](https://gitea.io) API Version 1.
 
-*Caution! This package is still under development*
-
 ## Getting Started
 
 ### Prerequisites
