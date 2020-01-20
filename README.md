@@ -95,9 +95,9 @@ Status | Method | Endpoint
 
 Status | Method | Endpoint
 --- | --- | ---
-❌ | POST | /markdown
-❌ | POST | /markdown/raw
-❌ | GET | /signing-key.gpg
+✅ | POST | /markdown
+✅ | POST | /markdown/raw
+✅ | GET | /signing-key.gpg
 ✅ | GET | /version
 
 #### Organization
