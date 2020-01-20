@@ -310,18 +310,18 @@ Status | Method | Endpoint | Comment
 
 Status | Method | Endpoint | Comment
 --- | --- | --- | --- 
-❌ | GET | /repos/{owner}/{repo}/times/{user} | 
-❌ | GET | /users/search | 
-❌ | GET | /users/{follower}/following/{followee} | 
-❌ | GET | /users/{username} | 
-❌ | GET | /users/{username}/followers | 
-❌ | GET | /users/{username}/following | 
-❌ | GET | /users/{username}/gpg_keys | 
-❌ | GET | /users/{username}/heatmap | 
-❌ | GET | /users/{username}/keys | 
-❌ | GET | /users/{username}/repos | 
-❌ | GET | /users/{username}/starred | 
-❌ | GET | /users/{username}/subscriptions | 
-❌ | GET | /users/{username}/tokens | 
-❌ | POST | /users/{username}/tokens | 
-❌ | DELETE | /users/{username}/tokens/{token} | 
+✅ | GET | /repos/{owner}/{repo}/times/{user} | 
+✅ | GET | /users/search | 
+✅ | GET | /users/{follower}/following/{followee} | 
+✅ | GET | /users/{username} | 
+✅ | GET | /users/{username}/followers | 
+✅ | GET | /users/{username}/following | 
+✅ | GET | /users/{username}/gpg_keys | 
+✅ | GET | /users/{username}/heatmap | 
+✅ | GET | /users/{username}/keys | 
+✅ | GET | /users/{username}/repos | 
+✅ | GET | /users/{username}/starred | 
+✅ | GET | /users/{username}/subscriptions | 
+✅ | GET | /users/{username}/tokens | 
+✅ | POST | /users/{username}/tokens | 
+✅ | DELETE | /users/{username}/tokens/{token} | 

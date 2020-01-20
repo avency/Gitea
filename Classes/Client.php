@@ -10,6 +10,7 @@ use Avency\Gitea\Endpoint\Miscellaneous;
 use Avency\Gitea\Endpoint\Organizations;
 use Avency\Gitea\Endpoint\Repositories;
 use Avency\Gitea\Endpoint\User;
+use Avency\Gitea\Endpoint\Users;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 
@@ -21,6 +22,7 @@ use Psr\Http\Message\ResponseInterface;
  * @method Organizations organizations()
  * @method Repositories repositories()
  * @method User user()
+ * @method Users users()
  */
 class Client
 {
