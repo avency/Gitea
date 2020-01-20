@@ -26,13 +26,13 @@ trait ForksTrait
     /**
      * @param string $owner
      * @param string $repositoryName
-     * @param string|null $organisation
+     * @param string|null $organization
      * @return array
      */
-    public function createFork(string $owner, string $repositoryName, string $organisation = null): array
+    public function createFork(string $owner, string $repositoryName, string $organization = null): array
     {
         $options['json'] = [
-            'organization' => $organisation
+            'organization' => $organization
         ];
         $options['json'] = $this->removeNullValues($options['json']);
 
