@@ -9,7 +9,7 @@ use Avency\Gitea\Client;
 /**
  * Miscellaneous endpoint
  */
-class Miscellaneous implements EndpointInterface
+class Miscellaneous extends AbstractEndpoint implements EndpointInterface
 {
     const BASE_URI = 'api/v1';
 
@@ -41,7 +41,7 @@ class Miscellaneous implements EndpointInterface
             'text' => $text,
             'wiki' => $wiki
         ];
-        $options['json'] = array_filter($options['json']);
+        $options['json'] = $this->removeNullValues($options['json']);
 
         $response = $this->client->request(self::BASE_URI . '/markdown', 'POST', $options);
         return (string)$response->getBody();

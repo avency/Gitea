@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Avency\Gitea;
 
+use Avency\Gitea\Endpoint\Admin;
 use Avency\Gitea\Endpoint\EndpointInterface;
 use Avency\Gitea\Endpoint\Miscellaneous;
 use Avency\Gitea\Endpoint\Repositories;
@@ -13,8 +14,9 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Gitea Client
  *
- * @method Repositories repositories()
+ * @method Admin admin()
  * @method Miscellaneous miscellaneous()
+ * @method Repositories repositories()
  */
 class Client
 {
@@ -73,6 +75,9 @@ class Client
      */
     public function request(string $uri = '', string $method = 'GET', array $options = []): ResponseInterface
     {
+        if (!empty($this->config['query']) && !empty($options['query'])) {
+            $options['query'] = array_merge($this->config['query'], $options['query']);
+        }
         return $this->httpClient->request($method, $uri, $options);
     }
 

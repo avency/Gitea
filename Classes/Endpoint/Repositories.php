@@ -9,7 +9,7 @@ use Avency\Gitea\Client;
 /**
  * Repositories endpoint
  */
-class Repositories implements EndpointInterface
+class Repositories extends AbstractEndpoint implements EndpointInterface
 {
     const BASE_URI = 'api/v1/repos';
 
@@ -79,7 +79,7 @@ class Repositories implements EndpointInterface
             ]
         ];
 
-        $options['json'] = array_filter($options['json']);
+        $options['json'] = $this->removeNullValues($options['json']);
         $response = $this->client->request(self::BASE_URI . '/migrate', 'POST', $options);
         return \GuzzleHttp\json_decode($response->getBody(), true);
     }
@@ -134,7 +134,7 @@ class Repositories implements EndpointInterface
             'sort' => $sort,
             'order' => $order,
         ];
-        $options['query'] = array_filter($options['query']);
+        $options['query'] = $this->removeNullValues($options['query']);
         $response = $this->client->request(self::BASE_URI . '/search', 'GET', $options);
         return \GuzzleHttp\json_decode($response->getBody(), true);
     }
