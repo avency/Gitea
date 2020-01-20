@@ -17,11 +17,12 @@ abstract class AbstractEndpoint implements EndpointInterface
      */
     protected function removeNullValues(array $array): array
     {
-        return array_filter(
-            $array,
-            function($value) {
-                return !is_null($value);
-            }
-        );
+        $array = array_map(function($value) {
+            return is_array($value) ? $this->removeNullValues($value) : $value;
+        }, $array);
+
+        return array_filter($array, function($value) {
+            return !is_null($value) && !(is_array($value) && empty($value));
+        });
     }
 }
