@@ -88,6 +88,7 @@ This project is licensed under the MIT License - see the
 Status | Method | Endpoint | Comment
 --- | --- | --- | ---
 ✅ | GET | /admin/orgs | 
+✅ | GET | /admin/users | 
 ✅ | POST | /admin/users | 
 ✅ | DELETE | /admin/users/{username} | 
 ✅ | PATCH | /admin/users/{username} | 
