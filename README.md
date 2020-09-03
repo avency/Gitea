@@ -30,7 +30,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 $giteaClient = new Avency\Gitea\Client(
     'https://gitea.yourdomain.com',
     [
-        'type' => Avency\Gitea::AUTH_TOKEN,
+        'type' => Avency\Gitea\Client::AUTH_TOKEN,
         'auth' => 'your-auth-token'
     ]
 );
@@ -40,7 +40,7 @@ or
 $giteaClient = new Avency\Gitea\Client(
     'https://gitea.yourdomain.com',
     [
-        'type' => Avency\Gitea::AUTH_BASIC_AUTH,
+        'type' => Avency\Gitea\Client::AUTH_BASIC_AUTH,
         'auth' => [
             'username' => 'your-username',
             'password' => 'your-password',
